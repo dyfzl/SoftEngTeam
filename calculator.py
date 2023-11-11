@@ -8,7 +8,6 @@ def main():
 
 def sub(a):
     b = int(input())
-    print(a - b)
     return a - b
 
 
