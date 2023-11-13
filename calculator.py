@@ -6,6 +6,8 @@ def main():
             a = sub(a)
         elif operator == "+":
             a = add(a)
+        elif operator == "*";
+            a =mul(a)
         break
 
 def sub(a):
@@ -15,6 +17,10 @@ def sub(a):
 def add(a):
     b = int(input())
     return a + b
+
+def mul(a):
+    b = int (input())
+    return a * b
 
 
 
