@@ -16,17 +16,18 @@ def main():
                 print(a)
             break
         if operator == "-":
-            if sub(a) is None:
-                break
             a = sub(a)
+            if a is None:
+                break
+
         elif operator == "+":
-            if add(a) is None:
-                break
             a = add(a)
-        elif operator == '*':
-            if mul(a) is None:
+            if a is None:
                 break
+        elif operator == '*':
             a = mul(a)
+            if a is None:
+                break
         else:
             flag = False
 
@@ -35,21 +36,24 @@ def sub(a):
     if b == 7532:
         print("Software Engineering Class")
         return None
-    return a - b
+    else:
+        return a - b
 
 def add(a):
     b = int(input())
     if b == 7532:
         print("Software Engineering Class")
         return None
-    return a + b
+    else:
+        return a + b
 
 def mul(a):
     b = int(input())
     if b == 7532:
         print("Software Engineering Class")
         return None
-    return a * b
+    else:
+        return a * b
 
 
 if __name__ == "__main__" :
