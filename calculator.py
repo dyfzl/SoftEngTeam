@@ -1,6 +1,11 @@
 def main():
-    a = int(input())
+    a = input()
     flag = True
+    if not a.isdigit() :
+        flag = False
+        a = float(a)
+    else : a = int(a)
+
     if a == 7532:
         print("Software Engineering Class")
         return
@@ -15,24 +20,33 @@ def main():
             else:
                 print(a)
             break
+
         if operator == "-":
             a = sub(a)
             if a is None:
                 break
-
+            elif a is False:
+                flag = False
         elif operator == "+":
             a = add(a)
             if a is None:
                 break
+            elif a is False:
+                flag = False
         elif operator == '*':
             a = mul(a)
             if a is None:
                 break
+            elif a is False:
+                flag = False
         else:
             flag = False
 
 def sub(a):
-    b = int(input())
+    b = input()
+    if not b.isdigit() :
+        return False
+    else : b = int(b)
     if b == 7532:
         print("Software Engineering Class")
         return None
@@ -40,7 +54,10 @@ def sub(a):
         return a - b
 
 def add(a):
-    b = int(input())
+    b = input()
+    if not b.isdigit() :
+        return False
+    else : b = int(b)
     if b == 7532:
         print("Software Engineering Class")
         return None
@@ -48,7 +65,10 @@ def add(a):
         return a + b
 
 def mul(a):
-    b = int(input())
+    b = input()
+    if not b.isdigit() :
+        return False
+    else : b = int(b)
     if b == 7532:
         print("Software Engineering Class")
         return None
