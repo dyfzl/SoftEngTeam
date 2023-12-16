@@ -48,8 +48,19 @@ def main():
             a = mul(a)
             if a is None:
                 break
-            elif a is False:
-                flag = False
+
+        elif operator == '!':
+            if not flag:
+                print('[ERROR] Input Error')
+                a = None
+            else:
+                a = facto(a)
+                if a is None:
+                    break
+
+        elif a is False:
+            flag = False
+
         else:
             flag = False
 
@@ -107,6 +118,17 @@ def mul(a):
     else:
         return a * b
 
+def facto(a):
+    if a == 0 or a == 1:
+        return 1
+    elif a < 0:
+        print("[ERROR] Out Of Range")
+        return None
+    else:
+        result = 1
+        for i in range(2, a + 1):
+            result *= i
+        return result
 
 if __name__ == "__main__" :
     main()
