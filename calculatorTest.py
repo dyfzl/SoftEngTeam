@@ -54,7 +54,31 @@ class TestSubCalculator(unittest.TestCase):
         result = sub(3)
         self.assertIsNone(result)
 
+class TestMulCalculator(unittest.TestCase):
+    @patch('builtins.input', return_value='5')
+    def testMulValidInput(self, mock_input):
+        result = mul(5)
+        self.assertEqual(result, 25)
 
+    @patch('builtins.input', return_value='abc')
+    def testMulInvalidInput(self, mock_input):
+        result = mul(5)
+        self.assertFalse(result)
+
+    @patch('builtins.input', return_value='7532')
+    def testMulEvent7532(self, mock_input):
+        result = mul(3)
+        self.assertIsNone(result)
+
+    @patch('builtins.input', return_value='1015')
+    def testMulEvent1015(self, mock_input):
+        result = mul(3)
+        self.assertIsNone(result)
+
+    @patch('builtins.input', return_value='7503')
+    def testMulEvent7503(self, mock_input):
+        result = mul(3)
+        self.assertIsNone(result)
 
 
 if __name__ == '__main__':
