@@ -51,8 +51,9 @@ def main():
 
         elif operator == '!':
             if not flag:
-                print('[ERROR] Input Error')
+                print('[SYSTEM] Input Error')
                 a = None
+                break
             else:
                 a = facto(a)
                 if a is None:
@@ -122,7 +123,7 @@ def facto(a):
     if a == 0 or a == 1:
         return 1
     elif a < 0:
-        print("[ERROR] Out Of Range")
+        print("[SYSTEM] Out Of Range")
         return None
     else:
         result = 1
